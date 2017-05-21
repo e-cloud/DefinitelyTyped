@@ -8,7 +8,7 @@
 /// <reference types="node" />
 
 import { Hash } from 'crypto'
-import { SourceNode, RawSourceMap, SourceMapGenerator } from 'source-map'
+import { SourceNode, RawSourceMap } from 'source-map'
 import { SourceListMap } from 'source-list-map'
 
 export abstract class Source {
@@ -182,12 +182,15 @@ export class ReplaceSource extends Source implements SourceAndMapMixin {
 export class SourceMapSource extends Source implements SourceAndMapMixin {
     _value: string;
     _name: string;
-    _sourceMap: SourceMapGenerator | RawSourceMap;
+    _sourceMap: RawSourceMap;
     _originalSource: string;
     _innerSourceMap: RawSourceMap;
 
     constructor(
-        value: string, name: string, sourceMap: SourceMapGenerator | RawSourceMap, originalSource: string,
+        value: string,
+        name: string,
+        sourceMap: RawSourceMap,
+        originalSource?: string,
         innerSourceMap?: RawSourceMap
     );
 

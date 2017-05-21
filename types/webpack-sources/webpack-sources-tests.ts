@@ -7,7 +7,6 @@ import {
     ReplaceSource,
     OriginalSource,
     SourceMapSource,
-
 } from 'webpack-sources';
 import { RawSourceMap } from 'source-map'
 
